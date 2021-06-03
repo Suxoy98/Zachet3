@@ -1,0 +1,25 @@
+#include <iostream>
+
+int main()
+{
+	const int n = 3, m = 3;
+	int A[n][m], opr;
+
+	std::cout << "Enter matrix A: \n";
+	for (int i = 0; i < n; i++)
+		for (int j = 0; j < m; j++)
+			std::cin >> A[i][j];
+
+	std::cout << "Matrix A: \n";
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < m; j++)
+			std::cout << A[i][j] << " ";
+		std::cout << std::endl;
+	}
+
+	opr = A[0][0] * A[1][1] * A[2][2] + A[0][1] * A[1][2] * A[2][0] + A[1][0] * A[2][1] * A[0][2]
+		- A[0][2] * A[1][1] * A[2][0] - A[0][0] * A[1][2] * A[2][1] - A[0][1] * A[1][0] * A[2][2];
+	std::cout << "Opredelitel A: \n" << opr;
+
+	return 0;
+}
